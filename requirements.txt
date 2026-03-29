@@ -1,0 +1,10 @@
+#langchain
+langchain
+langchain-core
+
+# Gemini Integration
+langchain-google-genai
+
+# Environment Variable Management
+python-dotenv
+

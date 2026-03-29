@@ -1,0 +1,103 @@
+{
+  "patient_info": {
+    "patient_id": "P001",
+    "name": "Rajesh Kumar",
+    "age": 52,
+    "gender": "Male",
+    "blood_group": "B+",
+    "height_cm": 170,
+    "weight_kg": 78,
+    "bmi": 26.99,
+    "contact": "+91-9876543210",
+    "address": "Solapur, Maharashtra, India",
+    "admission_date": "2026-03-25",
+    "discharge_date": "2026-03-29",
+    "primary_physician": "Dr. A. Sharma"
+  },
+  "conditions": [
+    "Type 2 Diabetes Mellitus",
+    "Hypertension",
+    "Coronary Artery Disease",
+    "Hyperlipidemia"
+  ],
+  "procedures": [
+    {
+      "procedure_name": "Coronary Angiography",
+      "description": "Assessment of blocked coronary arteries",
+      "date": "2026-03-26"
+    },
+    {
+      "procedure_name": "Percutaneous Coronary Intervention (PCI)",
+      "description": "Stent placement in LAD artery",
+      "date": "2026-03-26"
+    },
+    {
+      "procedure_name": "Blood Glucose Monitoring",
+      "description": "Daily monitoring of blood sugar levels",
+      "date": "2026-03-25 to 2026-03-29"
+    },
+    {
+      "procedure_name": "Electrocardiogram (ECG)",
+      "description": "Cardiac activity monitoring",
+      "date": "2026-03-25"
+    }
+  ],
+  "medications": [
+    {
+      "name": "Metformin",
+      "dosage": "500 mg",
+      "frequency": "Twice daily",
+      "purpose": "Blood sugar control"
+    },
+    {
+      "name": "Insulin Glargine",
+      "dosage": "10 units",
+      "frequency": "Once daily",
+      "purpose": "Long-acting insulin"
+    },
+    {
+      "name": "Amlodipine",
+      "dosage": "5 mg",
+      "frequency": "Once daily",
+      "purpose": "Blood pressure control"
+    },
+    {
+      "name": "Atorvastatin",
+      "dosage": "20 mg",
+      "frequency": "Once at night",
+      "purpose": "Cholesterol reduction"
+    },
+    {
+      "name": "Aspirin",
+      "dosage": "75 mg",
+      "frequency": "Once daily",
+      "purpose": "Blood thinner"
+    },
+    {
+      "name": "Clopidogrel",
+      "dosage": "75 mg",
+      "frequency": "Once daily",
+      "purpose": "Prevent clot formation"
+    }
+  ],
+  "vitals": {
+    "temperature_f": 98.6,
+    "heart_rate_bpm": 78,
+    "blood_pressure": "135/85 mmHg",
+    "respiratory_rate": 16,
+    "oxygen_saturation_percent": 97,
+    "fasting_blood_glucose_mg_dl": 140
+  },
+  "lab_values": {
+    "hba1c_percent": 7.8,
+    "fasting_blood_sugar_mg_dl": 140,
+    "postprandial_sugar_mg_dl": 210,
+    "total_cholesterol_mg_dl": 220,
+    "ldl_mg_dl": 140,
+    "hdl_mg_dl": 38,
+    "triglycerides_mg_dl": 180,
+    "creatinine_mg_dl": 1.1,
+    "hemoglobin_g_dl": 13.5
+  },
+  "clinical_notes": "Patient presented with chest pain and elevated blood sugar. Successfully underwent stent placement. Blood sugar and BP moderately controlled. Advised lifestyle modification including diet, exercise, and regular follow-ups."
+}
