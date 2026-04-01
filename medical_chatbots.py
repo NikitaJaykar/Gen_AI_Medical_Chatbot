@@ -3,6 +3,24 @@ from dotenv import load_dotenv
 import json
 
 load_dotenv()
+# retrive data from vector database
+from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+
+# Load same embedding model (VERY IMPORTANT)
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+
+# Load saved FAISS index
+vector_db = FAISS.load_local(
+    "faiss_index",
+    embeddings,
+    allow_dangerous_deserialization=True
+)
+query = input("Enter your medical query: ")
+results = vector_db.similarity_search(query, k=3)
+
 
 # Load patient data
 with open("Patient_data.json", "r") as file:
@@ -13,21 +31,22 @@ llm = ChatGoogleGenerativeAI(
     model="gemini-3-flash-preview"
 )
 
-# 👉 Step 1: Take user query
-user_query = input("Enter your medical query: ")
-
-# 👉 Step 2: Convert patient data to string (important for prompt)
+# Step 2: Convert patient data to string (important for prompt)
 patient_info = json.dumps(patient_data, indent=2)
+retriever_data = "\n".join([doc.page_content for doc in results])
 
-# 👉 Step 3: Create prompt template
+# Step 3: Create prompt template
 prompt = f"""
 You are an intelligent medical assistant.
 
 Below is the patient data:
 {patient_info}
 
+Medical Context:
+{retriever_data}
+
 User question:
-{user_query}
+{query}
 
 Instructions:
 - Analyze patient condition, vitals, lab values, and medications.
@@ -39,9 +58,9 @@ Instructions:
 Answer:
 """
 print(prompt)
-# 👉 Step 4: Call LLM
+#Step 4: Call LLM
 result = llm.invoke(prompt)
 
-# 👉 Step 5: Print response
-print("\n🩺 Medical Assistant Response:\n")
+#Step 5: Print response
+print("\n Medical Assistant Response:\n")
 print(result.content)
