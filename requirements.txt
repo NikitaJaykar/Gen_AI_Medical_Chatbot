@@ -1,16 +1,32 @@
-#langchain
+# FastAPI + Server
+fastapi
+uvicorn[standard]
+
+# LangChain Core
 langchain
 langchain-core
+langchain-community
 
-# Gemini Integration
+# Text Splitters
+langchain-text-splitters
+
+# Embeddings
+langchain-huggingface
+
+# Google Gemini
 langchain-google-genai
 
-# Environment Variable Management
-python-dotenv
+# Vector DB
+faiss-cpu
 
-langchain-community 
-langchain-text-splitters
-langchain-huggingface 
-faiss-cpu 
+# PDF Loader
 pypdf
 
+# Environment Variables
+python-dotenv
+
+# Optional but recommended
+tqdm
+
+streamlit 
+requests
